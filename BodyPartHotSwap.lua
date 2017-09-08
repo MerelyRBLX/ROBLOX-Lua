@@ -47,13 +47,13 @@ local function applyBodyPart(character, bodyPartModel)
 		if r6Folder == nil then
 			return
 		end
-		 for _, characterMesh in pairs(r6Folder:GetChildren()) do
-            local existingCharacterMesh = getOldCharacterMesh(character, characterMesh)
-            if existingCharacterMesh then
-                existingCharacterMesh:Destroy()
-            end
-            characterMesh.Parent = character
-        end
+		for _, characterMesh in pairs(r6Folder:GetChildren()) do
+			local existingCharacterMesh = getOldCharacterMesh(character, characterMesh)
+			if existingCharacterMesh then
+				existingCharacterMesh:Destroy()
+            		end
+			characterMesh.Parent = character
+        	end
 	end
 end
 
