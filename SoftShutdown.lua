@@ -41,8 +41,7 @@ else
 			return
 		end
 		
-		if (game.JobId == "") then
-			-- Offline
+		if (game:GetService("RunService"):IsStudio()) then
 			return
 		end
 		
