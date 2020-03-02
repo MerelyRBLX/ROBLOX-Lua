@@ -23,17 +23,12 @@ if (game.VIPServerId ~= "" and game.VIPServerOwnerId == 0) then
 	m.Parent = workspace
 	
 	local waitTime = 5
+	local playerList = Players:GetPlayers()
 
 	Players.PlayerAdded:connect(function(player)
 		wait(waitTime)
 		waitTime = waitTime / 2
-		TeleportService:Teleport(game.PlaceId, player)
-	end)
-	
-	for _,player in pairs(Players:GetPlayers()) do
-		TeleportService:Teleport(game.PlaceId, player)
-		wait(waitTime)
-		waitTime = waitTime / 2
+		TeleportService:TeleportPartyAsync(game.PlaceId, playerList)
 	end
 else
 	game:BindToClose(function()
