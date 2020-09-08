@@ -3,7 +3,7 @@
 	Author: Merely
 	
 	This system lets you shut down servers without losing a bunch of players.
-	When game.OnClose is called, the script teleports everyone in the server
+	When game:BindToClose() is called, the script teleports everyone in the server
 	into a reserved server.
 	
 	When the reserved servers start up, they wait a few seconds, and then
